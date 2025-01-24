@@ -12,7 +12,4 @@ class DatabaseRouter:
         return self.db_for_read(model, **hints)
     
     def allow_relation(self, obj1, obj2, **hints):
-        # Allow relations if both models are in the simulation app
-        if obj1._meta.app_label in ['users', 'products', 'orders'] and obj2._meta.app_label in ['users', 'products', 'orders']:
-            return True
-        return False
+        return True
