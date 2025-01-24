@@ -16,8 +16,8 @@ class Product(models.Model):
         db_table = 'products'
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user_id = models.IntegerField(default=0)
+    product_id = models.IntegerField(default=0)
     quantity = models.IntegerField()
 
     class Meta:
